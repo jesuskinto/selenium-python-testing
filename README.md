@@ -281,7 +281,7 @@ el = driver.find_element_by_id("cars")
 driver.execute_script('<JAVASCRIPT_CODE>', el)
 ```
 
-## Page Object Model and Page Factory in Selenium
+# Page Object Model and Page Factory in Selenium
 Page Object Model, also known as POM, is a design pattern in Selenium that creates an object repository for storing all web elements. It is useful in reducing code duplication and improves test case maintenance.
 
 More: 
