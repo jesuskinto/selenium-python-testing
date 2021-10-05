@@ -1,3 +1,5 @@
+# Bootstrap Modal Example for Automation
+
 from selenium import webdriver
 import pytest
 import time
@@ -17,6 +19,11 @@ class TestBoostrapModals(BaseClass):
 
 
     def test_multiple_modal(self):
+        # This is the place where the content for the modal dialog displays.
+        # Click launch modal button to launch second modal.
+        # Click close link to close the modal.
+        # Clicking on Save Changes button will close the modal and refresh the page
+
         url = "https://www.seleniumeasy.com/test/bootstrap-modal-demo.html"
         self.driver.get(url)
         button_open_modal = self.driver.find_element_by_xpath("//a[@href='#myModal']")
