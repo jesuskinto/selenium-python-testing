@@ -15,18 +15,16 @@ class TestCheckBoxDemo(BaseClass):
     def test_single_checkbox_demo(self):
         
         # Clicking on the checkbox will display a success message. Keep an eye on it
-
         url = 'https://www.seleniumeasy.com/test/basic-checkbox-demo.html'
         self.driver.get(url)
         checkbox = self.driver.find_elements_by_id("isAgeSelected")[0]
         checkbox.click()
-        if not checkbox.is_selected(): assert False
+        assert checkbox.is_selected()
         checkbox = self.driver.find_elements_by_id("isAgeSelected")[0]
         assert self.driver.find_element_by_id('txtAge').is_displayed()
 
 
     def test_two_input_fields(self):
-
         # Check the below points before automating
 
         url = 'https://www.seleniumeasy.com/test/basic-checkbox-demo.html'
@@ -36,8 +34,7 @@ class TestCheckBoxDemo(BaseClass):
         # Click on 'Check All' to check all checkboxes at once.
         self.driver.find_element_by_id("check1").click()
         for checkbox in checkboxs:
-            if not checkbox.is_selected():
-                assert False
+            assert checkbox.is_selected()
 
         # When you check all the checkboxes, button will change to 'Uncheck All'
         if (self.driver.find_element_by_id("check1").get_attribute('value') != 'Uncheck All'):

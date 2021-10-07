@@ -72,8 +72,7 @@ class TestJavascriptAlerts(BaseClass):
         alert_box.send_keys(message)
 
         alert_box.dismiss()
-        if (self.driver.find_element_by_id('prompt-demo').text != ''):
-            assert False
+        assert (self.driver.find_element_by_id('prompt-demo').text == '')
 
         button.click()
         alert_box.send_keys(message)
