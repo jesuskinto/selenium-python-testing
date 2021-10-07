@@ -33,16 +33,13 @@ class TestCheckBoxDemo(BaseClass):
 
         # Click on 'Check All' to check all checkboxes at once.
         self.driver.find_element_by_id("check1").click()
-        for checkbox in checkboxs:
-            assert checkbox.is_selected()
+        for checkbox in checkboxs: assert checkbox.is_selected()
 
         # When you check all the checkboxes, button will change to 'Uncheck All'
-        if (self.driver.find_element_by_id("check1").get_attribute('value') != 'Uncheck All'):
-            assert False
+        assert (self.driver.find_element_by_id("check1").get_attribute('value') == 'Uncheck All')
 
         # When you uncheck at least one checkbox, button will change to 'Check All'
         checkboxs[0].click()
-        if (self.driver.find_element_by_id("check1").get_attribute('value') != 'Check All'):
-            assert False
+        assert (self.driver.find_element_by_id("check1").get_attribute('value') == 'Check All')
 
         assert True
