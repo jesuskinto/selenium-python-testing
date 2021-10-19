@@ -20,7 +20,6 @@ class TestCheckBoxDemo(BaseClass):
         checkbox = self.driver.find_elements_by_id("isAgeSelected")[0]
         checkbox.click()
         assert checkbox.is_selected()
-        checkbox = self.driver.find_elements_by_id("isAgeSelected")[0]
         assert self.driver.find_element_by_id('txtAge').is_displayed()
 
 
